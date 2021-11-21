@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator</title>
+</head>
+<style>
+.block {
+
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #04AA6D;
+    color: white;
+    padding: 28px 56px;
+    font-size: 32px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block:hover {
+    background-color: #ddd;
+    color: black;
+}
+.textboxid {
+
+    width:100%;
+    font-size:32pt;
+}
+</style>
+<body>
+    <form action="" name="calculator">
+        <table>
+            <tr>
+                <td colspan="32"><input type="text" id="display" class="textboxid" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="2" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="3" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="+" class="block" onclick="valueButton(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="5" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="6" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="-" class="block" onclick="valueButton(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="8" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="9" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="*" class="block" onclick="valueButton(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="c" class="block" onclick="Clear()"></td>
+                <td><input type="button" value="0" class="block" onclick="valueButton(this)"></td>
+                <td><input type="button" value="=" class="block" onclick="Calculate()"></td>
+                <td><input type="button" value="/" class="block" onclick="valueButton(this)"></td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+
+        function valueButton(e) {
+            calculator.display.value += e.value;
+        }
+        function Clear(){
+            calculator.display.value = "";
+        }
+        function Calculate() {
+            calculator.display.value = eval(calculator.display.value);
+        }
+
+    </script>
+</body>
+</html>
